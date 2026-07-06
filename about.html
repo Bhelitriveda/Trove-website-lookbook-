@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story — Trove</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-hero {
+            min-height: 52vh;
+            background: var(--brown);
+            display: flex;
+            align-items: center;
+            padding: 5rem 3rem 4rem;
+            position: relative;
+            overflow: hidden;
+            justify-content: center;
+        }
+
+        /* .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: var(--brown-mid);
+            opacity: 0.3;
+        } */
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .about-hero-eyebrow {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 400;
+            color: var(--cream);
+            line-height: 1.1;
+        }
+
+        .about-hero-title em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+
+
+        @media (max-width:480px) {
+
+            .about-hero {
+                min-height: 32vh;
+                /* instead of 45vh */
+                padding: 2.5rem 1.5rem;
+            }
+
+            .about-hero-title {
+
+                margin: 0.5rem 0;
+
+                line-height: 1.05;
+                font-size: 2.5rem;
+
+            }
+
+            .about-hero-eyebrow {
+
+                margin-bottom: 0.8rem;
+
+            }
+        }
+
+
+        .story-section {
+            padding: 6rem 3rem;
+            background: var(--cream);
+        }
+
+        .story-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .story-text-col {
+            position: sticky;
+            top: 100px;
+        }
+
+        .story-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 400;
+            color: var(--brown);
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .story-heading em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .story-intro {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--brown-mid);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--cream-deeper);
+        }
+
+        .story-paragraphs {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .story-para {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--text-mid);
+            line-height: 1.85;
+        }
+
+        .story-pull {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--brown);
+            line-height: 1.5;
+            padding: 2rem 0;
+            border-top: 1px solid var(--cream-deeper);
+            border-bottom: 1px solid var(--cream-deeper);
+            margin: 1rem 0;
+        }
+
+        .story-sign {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--gold);
+            margin-top: 1rem;
+        }
+
+        .story-img-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .story-img-wrap {
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .story-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .story-img-wrap:hover img {
+            transform: scale(1.03);
+        }
+
+        .story-img-tall {
+            height: 480px;
+        }
+
+        .story-img-short {
+            height: 320px;
+        }
+
+        .story-img-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .story-img-row .story-img-wrap {
+            height: 240px;
+        }
+
+        .story-img-caption {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+
+
+
+
+
+
+
+        .values-section {
+            padding: 6rem 3rem;
+            background: var(--brown);
+        }
+
+        .values-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .values-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .values-eyebrow {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .values-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.8rem);
+            font-weight: 400;
+            color: var(--cream);
+        }
+
+        .values-title em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(168, 148, 90, 0.2);
+        }
+
+        .value-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-style: italic;
+            color: var(--gold);
+            opacity: 0.4;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .value-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--cream);
+            margin-bottom: 1rem;
+        }
+
+        .value-desc {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--gold-light);
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+        .closing-section {
+            padding: 7rem 3rem;
+            background: var(--cream-dark);
+            text-align: center;
+        }
+
+        .closing-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .closing-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-style: italic;
+            color: var(--brown);
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+
+        .closing-sub {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .story-text-col {
+                position: static;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .about-hero {
+                padding: 5rem 1.5rem 3rem;
+            }
+
+            .story-section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .story-img-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            /* Show full photo, no cropping — let the image dictate its own height */
+            .story-img-wrap {
+                height: auto !important;
+                aspect-ratio: auto !important;
+            }
+
+            .story-img-wrap img {
+                height: auto !important;
+                object-fit: contain !important;
+            }
+
+            /* Fix inconsistent gaps between image and caption */
+            .story-img-col>.story-img-wrap+.story-img-caption {
+                margin-top: 0.5rem !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            /* ...existing cropping fixes stay as-is... */
+
+            /* Remove flex gap — we'll control spacing explicitly with margins instead,
+     since gap was applying evenly between all children while caption's own
+     margin-top was adding extra only for some pairs, causing inconsistency */
+            .story-img-col {
+                gap: 0 !important;
+            }
+
+            /* Space below each top-level image, before its caption */
+            .story-img-col>.story-img-wrap {
+                margin-bottom: 0.5rem !important;
+            }
+
+            /* Space below each top-level caption, before the next image/row */
+            .story-img-col>.story-img-caption {
+                margin-top: 0 !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            /* Space below the row (Our Happy Customers pair), before the next image */
+            .story-img-col>.story-img-row {
+                margin-bottom: 1.5rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Catalogue</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="nav-logo">
+            <svg viewBox="0 0 190 68" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <text x="95" y="30" text-anchor="middle" font-family="'Playfair Display', serif" font-size="30"
+                    font-weight="600" fill="#3B1F0F" letter-spacing="5">trove</text>
+                <ellipse cx="95" cy="52" rx="13" ry="7.5" stroke="#3B1F0F" stroke-width="1.6" />
+                <circle cx="95" cy="52" r="5" fill="#3B1F0F" />
+                <circle cx="93" cy="50.2" r="1.5" fill="white" />
+                <line x1="88" y1="43" x2="86" y2="39" stroke="#3B1F0F" stroke-width="1.2" />
+                <line x1="91.5" y1="42" x2="90.5" y2="38" stroke="#3B1F0F" stroke-width="1.2" />
+                <line x1="95" y1="41.5" x2="95" y2="37.5" stroke="#3B1F0F" stroke-width="1.2" />
+                <line x1="98.5" y1="42" x2="99.5" y2="38" stroke="#3B1F0F" stroke-width="1.2" />
+                <line x1="102" y1="43" x2="104" y2="39" stroke="#3B1F0F" stroke-width="1.2" />
+                <g transform="translate(63,52)">
+                    <line x1="0" y1="-8" x2="0" y2="8" stroke="#A8945A" stroke-width="1.1" />
+                    <line x1="-8" y1="0" x2="8" y2="0" stroke="#A8945A" stroke-width="1.1" />
+                    <line x1="-5.5" y1="-5.5" x2="5.5" y2="5.5" stroke="#A8945A" stroke-width="0.7" />
+                    <line x1="5.5" y1="-5.5" x2="-5.5" y2="5.5" stroke="#A8945A" stroke-width="0.7" />
+                </g>
+                <g transform="translate(127,52)">
+                    <line x1="0" y1="-8" x2="0" y2="8" stroke="#A8945A" stroke-width="1.1" />
+                    <line x1="-8" y1="0" x2="8" y2="0" stroke="#A8945A" stroke-width="1.1" />
+                    <line x1="-5.5" y1="-5.5" x2="5.5" y2="5.5" stroke="#A8945A" stroke-width="0.7" />
+                    <line x1="5.5" y1="-5.5" x2="-5.5" y2="5.5" stroke="#A8945A" stroke-width="0.7" />
+                </g>
+            </svg>
+        </div>
+        <div class="nav-right">
+            <a href="https://www.instagram.com/trove.handcrafted?igsh=MTFneTEycXBneXQxdQ==" target="_blank"
+                aria-label="Trove on Instagram">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+                </svg>
+            </a>
+            <a href="https://wa.me/917217092030" target="_blank" aria-label="Trove on WhatsApp">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M21 11.5a8.5 8.5 0 1 1-3.8-7.1" />
+                    <path d="M21 11.5c0-4.7-3.8-8.5-8.5-8.5a8.5 8.5 0 0 0-7.4 12.7L4 21l5.4-1.1a8.5 8.5 0 0 0 3.1.6" />
+
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Catalogue</a>
+        <a href="about.html">Our Story</a>
+        <a href="contact.html">Contact us</a>
+    </div>
+
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <span class="about-hero-eyebrow">Our Story</span>
+            <h1 class="about-hero-title">The Journey<br>behind <em>trove</em></h1>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="story-grid">
+            <div class="story-text-col">
+                <span class="story-label">Jaya & Mansi</span>
+                <h2 class="story-heading">Made with hands.<br>Carried with <em>heart.</em></h2>
+                <p class="story-intro">Hello, we're Jaya and Mansi, the creators behind Trove. Our journey didn't begin
+                    with a business plan or a grand vision. It began with a shared love for art, creativity, and the
+                    desire to create something meaningful with our own hands.</p>
+                <div class="story-paragraphs">
+                    <p class="story-para">Like many creative people, we spent years exploring different forms of design
+                        and artistic expression. We were fascinated by how a simple piece of art could transform a
+                        space, evoke emotions, and tell a story without saying a single word. That fascination
+                        eventually became the foundation of Trove.</p>
+                    <p class="story-para">The name Trove represents a collection of treasures, and that's exactly what
+                        we wanted our creations to be — special pieces that people could cherish and connect with.</p>
+                    <p class="story-para">What started as experimenting with paints, fabrics, and ideas soon turned into
+                        countless hours of learning, practicing, making mistakes, and improving. We painted late into
+                        the night, tested new techniques, redesigned products, and slowly built confidence in our craft.
+                    </p>
+                    <p class="story-para">The journey wasn't always easy. Building a handmade brand comes with
+                        challenges. Every product requires time, patience, and attention to detail. There were moments
+                        of uncertainty, moments when growth felt slow, and moments when we questioned whether people
+                        would truly value handcrafted art in a world dominated by mass production.</p>
+                    <p class="story-para">But each message from a customer, every order, and every kind word reminded us
+                        why we started. Today, Trove is more than a brand. It is a reflection of our artistic journey,
+                        our values, and our belief that handmade creations have a special place in people's lives.</p>
+                    <p class="story-para">Every tapestry, bag, and hand-painted piece we create carries a part of our
+                        story. Behind each design are hours of sketching, painting, refining, and dreaming. We believe
+                        that art should feel personal, and that's why we approach every creation with care and
+                        intention.</p>
+                    <p class="story-para">As we continue to grow, our mission remains simple: to create meaningful art
+                        that inspires, connects, and brings beauty into everyday life. To everyone who has supported us
+                        — thank you for being part of this journey. This is only the beginning.</p>
+                    <p class="story-sign">— Jaya & Mansi</p>
+                </div>
+            </div>
+
+            <div class="story-img-col">
+                <div class="story-img-wrap story-img-tall">
+                    <img src="images/products/stall2.jpg" alt="our stall" />
+                </div>
+                <p class="story-img-caption">Our Stall</p>
+                <div class="story-img-row">
+                    <div>
+                        <div class="story-img-wrap"><img src="images/products/customer1.png"
+                                alt="Our Happy Customers" /></div>
+                        <p class="story-img-caption">Our Happy Customers</p>
+                    </div>
+                    <div>
+                        <div class="story-img-wrap"><img src="images/products/customer2.jpg"
+                                alt="Our Happy Customers" /></div>
+                        <p class="story-img-caption">Our Happy Customers</p>
+                    </div>
+                </div>
+                <div class="story-img-wrap story-img-short">
+                    <img src="images/products/stall5.jpg" alt="Collection" />
+                </div>
+                <p class="story-img-caption">Our Stall</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="values-inner">
+            <div class="values-header">
+                <span class="values-eyebrow">What We Believe</span>
+                <h2 class="values-title">Rooted in <em>intention</em></h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-number">01</div>
+                    <h3 class="value-name">Handcrafted Always</h3>
+                    <p class="value-desc">Every piece is made by hand, with real attention to every stitch, paint, and
+                        detail. No shortcuts.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">02</div>
+                    <h3 class="value-name">Art With Intention</h3>
+                    <p class="value-desc">Our patterns draw from mystical traditions — the all-seeing eye, the
+                        phases of the moon, the serpent of transformation.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">03</div>
+                    <h3 class="value-name">Made to Last</h3>
+                    <p class="value-desc">We design pieces that outlive trends. Objects that earn a permanent place in
+                        your home and carry meaning for years.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="closing-section">
+        <div class="closing-inner">
+            <p class="closing-quote">"This is only the beginning, and we're excited to see where the next chapter takes
+                us."</p>
+            <p class="closing-sub">— Jaya & Mansi <3 , Founders - Trove.</p>
+                    <a href="index.html#collections" class="btn-outline">Explore the Collection</a>
+        </div>
+    </section>
+
+    <!-- <footer style="background: var(--brown); padding: 2.5rem 3rem; text-align: center;">
+        <p
+            style="font-family: 'Jost', sans-serif; font-size: 0.75rem; color: var(--gold-light); letter-spacing: 0.1em; opacity: 0.7;">
+            © 2025 Trove · Jaipur, India · All rights reserved</p>
+    </footer> -->
+
+    <footer class="about-footer">
+        <p class="about-footer-text">
+            Trove · Dehradun, Uttrakhand, India · Handcrafted with love
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

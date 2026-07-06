@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Trove</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital@0;1&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Catalogue</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="nav-logo">
+            <svg viewBox="0 0 190 68" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <text x="95" y="30" text-anchor="middle" font-family="'Playfair Display', serif" font-size="30"
+                    font-weight="600" fill="#3B1F0F" letter-spacing="5">trove</text>
+                <ellipse cx="95" cy="52" rx="13" ry="7.5" stroke="#3B1F0F" stroke-width="1.6" />
+                <circle cx="95" cy="52" r="5" fill="#3B1F0F" />
+                <circle cx="93" cy="50.2" r="1.5" fill="white" />
+                <line x1="88" y1="43" x2="86" y2="39" stroke="#3B1F0F" stroke-width="1.2" />
+                <line x1="91.5" y1="42" x2="90.5" y2="38" stroke="#3B1F0F" stroke-width="1.2" />
+                <line x1="95" y1="41.5" x2="95" y2="37.5" stroke="#3B1F0F" stroke-width="1.2" />
+                <line x1="98.5" y1="42" x2="99.5" y2="38" stroke="#3B1F0F" stroke-width="1.2" />
+                <line x1="102" y1="43" x2="104" y2="39" stroke="#3B1F0F" stroke-width="1.2" />
+                <g transform="translate(63,52)">
+                    <line x1="0" y1="-8" x2="0" y2="8" stroke="#A8945A" stroke-width="1.1" />
+                    <line x1="-8" y1="0" x2="8" y2="0" stroke="#A8945A" stroke-width="1.1" />
+                    <line x1="-5.5" y1="-5.5" x2="5.5" y2="5.5" stroke="#A8945A" stroke-width="0.7" />
+                    <line x1="5.5" y1="-5.5" x2="-5.5" y2="5.5" stroke="#A8945A" stroke-width="0.7" />
+                </g>
+                <g transform="translate(127,52)">
+                    <line x1="0" y1="-8" x2="0" y2="8" stroke="#A8945A" stroke-width="1.1" />
+                    <line x1="-8" y1="0" x2="8" y2="0" stroke="#A8945A" stroke-width="1.1" />
+                    <line x1="-5.5" y1="-5.5" x2="5.5" y2="5.5" stroke="#A8945A" stroke-width="0.7" />
+                    <line x1="5.5" y1="-5.5" x2="-5.5" y2="5.5" stroke="#A8945A" stroke-width="0.7" />
+                </g>
+            </svg>
+        </div>
+        <div class="nav-right">
+            <a href="https://www.instagram.com/trove.handcrafted?igsh=MTFneTEycXBneXQxdQ==" target="_blank"
+                aria-label="Trove on Instagram">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+                </svg>
+            </a>
+            <a href="https://wa.me/917217092030" target="_blank" aria-label="Trove on WhatsApp">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M21 11.5a8.5 8.5 0 1 1-3.8-7.1" />
+                    <path d="M21 11.5c0-4.7-3.8-8.5-8.5-8.5a8.5 8.5 0 0 0-7.4 12.7L4 21l5.4-1.1a8.5 8.5 0 0 0 3.1.6" />
+
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Catalogue</a>
+        <a href="about.html">Our Story</a>
+        <a href="contact.html">Contact us</a>
+    </div>
+
+    <section class="contact-hero">
+        <span class="contact-hero-eyebrow">Get in Touch</span>
+        <h1 class="contact-hero-title">Let's <em>Connect</em></h1>
+    </section>
+
+    <main class="contact-page">
+
+        <div class="contact-grid">
+
+            <div class="contact-form-col">
+                <span class="contact-label">Send a Message</span>
+                <h2 class="contact-heading">We'd love to <em>hear from you.</em></h2>
+                <p class="contact-intro">Have a question about a piece, a custom order, or just want to say hello? Fill
+                    this out and it'll open directly in your email.</p>
+
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="contactName">Name</label>
+                        <input type="text" id="contactName" name="name" required>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label for="contactEmail">Your Email</label>
+                        <input type="email" id="contactEmail" name="email" required>
+                    </div> -->
+
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" name="message" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="contact-submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info-col">
+                <span class="contact-label">Reach Us Directly</span>
+                <h2 class="contact-heading">Find us <em>elsewhere.</em></h2>
+
+                <div class="contact-links">
+                    <a href="mailto:trove.travellover@gmail.com" class="contact-link-item">
+                        <span class="contact-link-label">Email</span>
+                        <span class="contact-link-value">trove.travellover@gmail.com</span>
+                    </a>
+
+                    <a href="https://www.instagram.com/trove.handcrafted?igsh=MTFneTEycXBneXQxdQ==" target="_blank"
+                        class="contact-link-item">
+                        <span class="contact-link-label">Instagram</span>
+                        <span class="contact-link-value">trove.handcrafted</span>
+                    </a>
+
+                    <a href="https://wa.me/917217092030" target="_blank" class="contact-link-item">
+                        <span class="contact-link-label">WhatsApp</span>
+                        <span class="contact-link-value">Chat with us</span>
+                    </a>
+                </div>
+
+                <p class="contact-location">Jaipur, Rajasthan, India</p>
+            </div>
+
+        </div>
+
+        <section class="faq-section">
+            <span class="contact-label" style="text-align:center; display:block;">Common Questions</span>
+            <h2 class="contact-heading faq-heading">Frequently <em>Asked.</em></h2>
+
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How long does a custom order take?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Each custom piece is handcrafted with care. Custom orders typically take 2-3 weeks to
+                            complete, depending on the design, level of detail and current order
+                            volume. We'll always confirm an estimated timeline with you before starting.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you ship internationally?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we ship across India and internationally. Shipping costs and timelines vary by location
+                            and are calculated at checkout
+                            - reach out to us directly and we'll share the details for your area.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is every piece unique?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. Every Trove piece is hand-painted and handcrafted, so slight variations in color
+                            and brushstrokes make each creation one of a kind.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How should I care for hand-painted textiles?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We recommend gentle spot cleaning or hand washing with mild detergent. Avoid harsh chemicals
+                            and bleach. Also avoid direct sunlight for long
+                            periods and always air dry in shade to preserve the colours and print.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p class="contact-footer-text">Trove · Dehradun, Uttrakhand, India · Handcrafted with love</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const message = document.getElementById('contactMessage').value;
+
+            const subject = `New message from ${name} via Trove website`;
+            const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+            const mailtoLink = `mailto:hello@trove-placeholder.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoLink;
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+
+                // Close any other open FAQ item first (optional accordion-style behavior)
+                document.querySelectorAll('.faq-item.open').forEach(openItem => {
+                    if (openItem !== item) openItem.classList.remove('open');
+                });
+
+                item.classList.toggle('open', !isOpen);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
